@@ -201,7 +201,7 @@ for acc in to_use:
         print(f'{error} {r}{e}')
         continue
     print(f'{plus}{grey} User: {cy}{acc_name}{lg} -- {cy}Retrieving entities...')
-    #c.get_dialogs()
+    c.get_dialogs()
     try:
         members = []
         members = c.get_participants(scraped_grp_entity, limit = 10500)
@@ -230,7 +230,7 @@ for acc in to_use:
             user_id = user.first_name
             target_title = target_entity.title
             print(f'{plus}{grey} User: {cy}{acc_name}{lg} -- {cy}{user_id} {lg}--> {cy}{target_title}')
-            #print(f'{info}{grey} User: {cy}{acc_name}{lg} -- Sleep 1 second')
+            print(f'{info}{grey} User: {cy}{acc_name}{lg} -- Sleep 1 second')
             adding_status += 1
             print(f'{info}{grey} User: {cy}{acc_name}{lg} -- Sleep {w}{sleep_time} {lg}second(s)')
             time.sleep(sleep_time)
@@ -269,7 +269,7 @@ for acc in to_use:
         except Exception as e:
             print(f'{error} {e}')
             continue
-#global adding_status, approx_members_count
+global adding_status, approx_members_count
 if adding_status != 0:
     print(f"\n{info}{lg} Adding session ended")
 try:
