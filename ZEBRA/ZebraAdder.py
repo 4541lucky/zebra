@@ -148,8 +148,8 @@ if choice == 0:
     target = str(input(f'{INPUT}{cy} Enter public group link: {r}'))
 else:
     target = str(input(f'{INPUT}{cy} Enter private group link: {r}'))
-print(f'{grey}_'*50)
-#status_choice = str(input(f'{INPUT}{cy} Do you wanna add active members?[y/n]: {r}'))
+print(f'{grey}_'*200)
+status_choice = str(input(f'{INPUT}{cy} Do you wanna add active members?[y/n]: {r}'))
 to_use = [x for x in accounts[:number_of_accs]]
 for l in to_use: accounts.remove(l)
 with open('vars.txt', 'wb') as f:
@@ -159,13 +159,13 @@ with open('vars.txt', 'wb') as f:
         pickle.dump(ab, f)
     f.close()
 sleep_time = int(input(f'{INPUT}{cy} Enter delay time per request{w}[{lg}0 for None{w}]: {r}'))
-#print(f'{info}{lg} Joining group from {w}{number_of_accs} accounts...')
-#print(f'{grey}-'*50)
+print(f'{info}{lg} Joining group from {w}{number_of_accs} accounts...')
+print(f'{grey}-'*50)
 print(f'{success}{lg} -- Adding members from {w}{len(to_use)}{lg} account(s) --')
 adding_status = 0
 approx_members_count = 0
 for acc in to_use:
-    stop = index + 60
+    stop = index + 200
     c = TelegramClient(f'sessions/{acc[0]}', 10963290 , 'cc3c7b29fa6da7ee01c1c12fd3236140')
     print(f'{plus}{grey} User: {cy}{acc[0]}{lg} -- {cy}Starting session... ')
     c.start(acc[0])
@@ -204,7 +204,7 @@ for acc in to_use:
     #c.get_dialogs()
     try:
         members = []
-        members = c.get_participants(scraped_grp_entity, limit = 5500)
+        members = c.get_participants(scraped_grp_entity, limit = 10500)
     except Exception as e:
         print(f'{error}{r} Couldn\'t scrape members')
         print(f'{error}{r} {e}')
