@@ -147,7 +147,7 @@ while True:
         print(f'\n{lg}[i] Checking for updates...')
         try:
             
-            version = requests.get('https://github.com/Sumit9969/ZEBRA-TG-MEMBER-ADDER/main/version.txt')
+            version = requests.get('https://github.com/4541lucky/zebra/main/ZEBRA/version.txt')
         except:
             print(f'{r} You are not connected to the internet')
             print(f'{r} Please connect to the internet and retry')
