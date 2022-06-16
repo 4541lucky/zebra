@@ -269,7 +269,7 @@ for acc in to_use:
         except Exception as e:
             print(f'{error} {e}')
             continue
-global adding_status, approx_members_count
+#global adding_status, approx_members_count
 if adding_status != 0:
     print(f"\n{info}{lg} Adding session ended")
 try:
